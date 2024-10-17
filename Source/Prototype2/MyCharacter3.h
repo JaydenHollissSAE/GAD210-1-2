@@ -4,16 +4,26 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "MyCharacter.generated.h"
+#include "MyCharacter3.generated.h"
 
 UCLASS()
-class PROTOTYPE2_API AMyCharacter : public ACharacter
+class PROTOTYPE2_API AMyCharacter3 : public ACharacter
 {
 	GENERATED_BODY()
 
+protected:
+
+	//Spring Arm Component to follow the camera behind the player
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	class USpringArmComponent* SpringArmComp;
+
+	//Player follow camera
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	class UCameraComponent* CameraComp;
+
 public:
 	// Sets default values for this character's properties
-	AMyCharacter();
+	AMyCharacter3();
 
 protected:
 	// Called when the game starts or when spawned
